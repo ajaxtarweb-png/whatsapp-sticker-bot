@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: whatsapp-sticker-bot
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: SESSION_PATH
+        value: /data/.wwebjs_auth
+    disk:
+      name: session-data
+      mountPath: /data
+      sizeGB: 1
